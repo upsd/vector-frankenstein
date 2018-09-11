@@ -15,61 +15,61 @@ namespace VectorFrankenstein
 
         public int X()
         {
-            return this.x;
+            return x;
         }
 
         public int Y()
         {
-            return this.y;
+            return y;
         }
 
-        public Vector add(Vector vector)
+        public Vector Add(Vector vector)
         {
-            int sumOfX = X() + vector.X();
-            int sumOfY = Y() + vector.Y();
+            var sumOfX = X() + vector.X();
+            var sumOfY = Y() + vector.Y();
 
             return new Vector(sumOfX, sumOfY);
         }
 
-        public Vector subtract(Vector vector)
+        public Vector Subtract(Vector vector)
         {
-            int differenceInX = X() - vector.X();
-            int differenceInY = Y() - vector.Y();
+            var differenceInX = X() - vector.X();
+            var differenceInY = Y() - vector.Y();
 
             return new Vector(differenceInX, differenceInY);
         }
 
-        public Vector multiplyBy(int multiplier)
+        public Vector MultiplyBy(int multiplier)
         {
             return new Vector(X() * multiplier, Y() * multiplier);
         }
 
-        public int dotProductWith(Vector anotherVector)
+        public int DotProductWith(Vector anotherVector)
         {
-            int xMultiplied = X() * anotherVector.X();
-            int yMultiplied = Y() * anotherVector.Y();
+            var xMultiplied = X() * anotherVector.X();
+            var yMultiplied = Y() * anotherVector.Y();
 
             return xMultiplied + yMultiplied;
         }
 
-        public int sumOfSquares()
+        public int SumOfSquares()
         {
-            return dotProductWith(this);
+            return DotProductWith(this);
         }
 
-        public double magnitude()
+        public double Magnitude()
         {
-            return Math.Sqrt(sumOfSquares());
+            return Math.Sqrt(SumOfSquares());
         }
 
-        public double distanceFrom(Vector anotherVector)
+        public double DistanceFrom(Vector anotherVector)
         {
-            return subtract(anotherVector).magnitude();
+            return Subtract(anotherVector).Magnitude();
         }
 
-        public int squaredDistanceFrom(Vector anotherVector)
+        public int SquaredDistanceFrom(Vector anotherVector)
         {
-            return subtract(anotherVector).sumOfSquares();
+            return Subtract(anotherVector).SumOfSquares();
         }
 
         public bool Equals(Vector other)
@@ -84,8 +84,8 @@ namespace VectorFrankenstein
                 return false;
             }
 
-            return this.X() == other.X()
-                   && this.Y() == other.Y();
+            return X() == other.X()
+                   && Y() == other.Y();
         }
     }
 }

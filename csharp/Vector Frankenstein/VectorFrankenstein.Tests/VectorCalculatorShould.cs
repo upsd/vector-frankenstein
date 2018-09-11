@@ -7,9 +7,9 @@ namespace VectorFrankenstein.Tests
     public class VectorCalculatorShould
     {
         [Test]
-        public void sum_multiple_vectors()
+        public void Sum_Multiple_Vectors()
         {
-            List<Vector> vectors = new List<Vector>()
+            var vectors = new List<Vector>()
             {
                 new Vector(1, 2),
                 new Vector(2, 3),
@@ -17,16 +17,16 @@ namespace VectorFrankenstein.Tests
             };
 
 
-            Vector sum = VectorCalculator.sum(vectors);
+            var sum = VectorCalculator.Sum(vectors);
 
 
             Assert.That(sum, Is.EqualTo(new Vector(7, 13)));
         }
 
         [Test]
-        public void calculate_mean_of_vectors()
+        public void Calculate_Mean_Of_Vectors()
         {
-            List<Vector> vectors = new List<Vector>()
+            var vectors = new List<Vector>()
             {
                 new Vector(2, 4),
                 new Vector(5, 2),
@@ -34,7 +34,7 @@ namespace VectorFrankenstein.Tests
             };
 
 
-            Vector mean = VectorCalculator.meanOf(vectors);
+            var mean = VectorCalculator.MeanOf(vectors);
 
 
             Assert.That(mean, Is.EqualTo(new Vector(5, 3)));
