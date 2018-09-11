@@ -4,50 +4,40 @@ namespace VectorFrankenstein
 {
     public class Vector : IEquatable<Vector>
     {
-        private readonly int x;
-        private readonly int y;
+        public int X { get; }
+        public int Y { get; }
 
         public Vector(int x, int y)
         {
-            this.x = x;
-            this.y = y;
-        }
-
-        public int X()
-        {
-            return x;
-        }
-
-        public int Y()
-        {
-            return y;
+            X = x;
+            Y = y;
         }
 
         public Vector Add(Vector vector)
         {
-            var sumOfX = X() + vector.X();
-            var sumOfY = Y() + vector.Y();
+            var sumOfX = X + vector.X;
+            var sumOfY = Y + vector.Y;
 
             return new Vector(sumOfX, sumOfY);
         }
 
         public Vector Subtract(Vector vector)
         {
-            var differenceInX = X() - vector.X();
-            var differenceInY = Y() - vector.Y();
+            var differenceInX = X - vector.X;
+            var differenceInY = Y - vector.Y;
 
             return new Vector(differenceInX, differenceInY);
         }
 
         public Vector MultiplyBy(int multiplier)
         {
-            return new Vector(X() * multiplier, Y() * multiplier);
+            return new Vector(X * multiplier, Y * multiplier);
         }
 
         public int DotProductWith(Vector anotherVector)
         {
-            var xMultiplied = X() * anotherVector.X();
-            var yMultiplied = Y() * anotherVector.Y();
+            var xMultiplied = X * anotherVector.X;
+            var yMultiplied = Y * anotherVector.Y;
 
             return xMultiplied + yMultiplied;
         }
@@ -84,8 +74,7 @@ namespace VectorFrankenstein
                 return false;
             }
 
-            return X() == other.X()
-                   && Y() == other.Y();
+            return X == other.X && Y == other.Y;
         }
     }
 }
